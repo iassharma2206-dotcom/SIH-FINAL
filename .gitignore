@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.csv
+!demo_stops.csv
+!demo_stops_40.csv
+.env
+venv/
+node_modules/
+frontend/node_modules/
+frontend/dist/
+.DS_Store
+outputs/
+.pytest_cache/
+*.log
+.streamlit/secrets.toml

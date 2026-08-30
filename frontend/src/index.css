@@ -1,0 +1,277 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@600,700,800&display=swap');
+@import "tailwindcss";
+
+:root,
+[data-theme='dark'] {
+  --color-bg-primary: #110b1b;
+  --color-bg-secondary: #1a1420;
+  --color-bg-tertiary: #1e1929;
+  --color-bg-quaternary: #221d2d;
+  --color-bg-hover: #251f33;
+  --color-text-primary: #f4f1e8;
+  --color-text-secondary: #e9def5;
+  --color-text-muted: #e6beb2;
+  --color-text-muted-alt: rgba(230, 190, 178, 0.85);
+  --color-accent: #ff5719;
+  --color-accent-soft: #ffb59e;
+  --color-blue-accent: #9dcaff;
+  --color-purple-accent: #d0bcff;
+  --color-border: #5c4037;
+  --color-success: #44ff88;
+  --color-danger: #ff4444;
+  --color-danger-soft: #ff6666;
+  /* Dark mode uses existing glow classes — shadow vars are no-ops */
+  --shadow-card: 0 0 0 rgba(0,0,0,0);
+  --shadow-card-hover: 0 0 0 rgba(0,0,0,0);
+}
+
+[data-theme='light'] {
+  --color-bg-primary: #f6f4ef;       /* page background - warm off-white */
+  --color-bg-secondary: #ffffff;      /* raised cards - pure white for contrast */
+  --color-bg-tertiary: #efeae1;       /* nested/inset surfaces */
+  --color-bg-quaternary: #e6dfd2;     /* selected/active surfaces */
+  --color-bg-hover: #ddd4c3;          /* hover states */
+  --color-text-primary: #1c1626;      /* near-black plum, matches brand warmth */
+  --color-text-secondary: #2e2438;
+  --color-text-muted: #6b5850;
+  --color-text-muted-alt: rgba(107, 88, 80, 0.85);
+  --color-accent: #ff5719;
+  --color-accent-soft: #d9490f;       /* darker orange for AA contrast on white */
+  --color-blue-accent: #1d5fb8;       /* darkened for readability on light bg */
+  --color-purple-accent: #6b46c1;     /* darkened for readability on light bg */
+  --color-border: #ddd3c2;
+  --color-success: #15803d;
+  --color-danger: #dc2626;
+  --color-danger-soft: #ef4444;
+  --shadow-card: 0 1px 3px rgba(28, 22, 38, 0.06), 0 4px 12px rgba(28, 22, 38, 0.04);
+  --shadow-card-hover: 0 2px 6px rgba(28, 22, 38, 0.08), 0 8px 20px rgba(28, 22, 38, 0.06);
+}
+
+[data-theme-cosmic='true'] {
+  --color-bg-primary: #0e0b1f;
+  --color-bg-secondary: #12102a;
+  --color-bg-tertiary: #16143a;
+  --color-bg-quaternary: #1c1a44;
+  --color-bg-hover: #22204e;
+  --color-text-primary: #ede9fe;
+  --color-text-secondary: #ddd6fe;
+  --color-text-muted: #c4b5fd;
+  --color-text-muted-alt: rgba(196, 181, 253, 0.85);
+  --color-accent: #a78bfa;
+  --color-accent-soft: #c4b5fd;
+  --color-blue-accent: #818cf8;
+  --color-purple-accent: #f0abfc;
+  --color-border: #3b2f6b;
+  --color-success: #34d399;
+  --color-danger: #f87171;
+  --color-danger-soft: #fca5a5;
+  --shadow-card: 0 0 0 rgba(0,0,0,0);
+  --shadow-card-hover: 0 0 0 rgba(0,0,0,0);
+}
+
+[data-theme-cyberpunk='true'] {
+  --color-bg-primary: #000000;
+  --color-bg-secondary: #0a0007;
+  --color-bg-tertiary: #100010;
+  --color-bg-quaternary: #1a0018;
+  --color-bg-hover: #220022;
+  --color-text-primary: #ff9ec4;
+  --color-text-secondary: #ffb8d4;
+  --color-text-muted: #ff6ba8;
+  --color-text-muted-alt: rgba(255, 107, 168, 0.85);
+  --color-accent: #ff2d78;
+  --color-accent-soft: #ff6ba8;
+  --color-blue-accent: #ff2d78;
+  --color-purple-accent: #ff85c2;
+  --color-border: #5a0030;
+  --color-success: #00ffaa;
+  --color-danger: #ff0055;
+  --color-danger-soft: #ff4488;
+  --shadow-card: 0 0 20px rgba(255, 45, 120, 0.08);
+  --shadow-card-hover: 0 0 30px rgba(255, 45, 120, 0.18);
+}
+
+[data-theme-neonrain='true'] {
+  --color-bg-primary: #050814;
+  --color-bg-secondary: #0a0e24;
+  --color-bg-tertiary: #0f1535;
+  --color-bg-quaternary: #151d45;
+  --color-bg-hover: #1c2759;
+  --color-text-primary: #e6efff;
+  --color-text-secondary: #c5d9ff;
+  --color-text-muted: #8aaeff;
+  --color-text-muted-alt: rgba(138, 174, 255, 0.85);
+  --color-accent: #e040fb;
+  --color-accent-soft: #ea80fc;
+  --color-blue-accent: #00e5ff;
+  --color-purple-accent: #d500f9;
+  --color-border: #23326e;
+  --color-success: #00e676;
+  --color-danger: #ff1744;
+  --color-danger-soft: #ff616f;
+  --shadow-card: 0 0 20px rgba(0, 229, 255, 0.1);
+  --shadow-card-hover: 0 0 30px rgba(224, 64, 251, 0.2);
+}
+
+
+@theme {
+  --font-display: 'Clash Display', 'Inter', sans-serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+@layer base {
+  :root {
+    --font-display: 'Clash Display', 'Inter', sans-serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+    --color-surface: #161120;
+    --color-surface-dim: #111111;
+    --color-surface-bright: #3c3647;
+    --color-surface-container-lowest: #0c0a10;
+    --color-surface-container-low: #161220;
+    --color-surface-container: #1e1929;
+    --color-surface-container-high: #2d2738;
+    --color-surface-container-highest: #383243;
+    --color-on-surface: #f4f1e8;
+    --color-on-surface-variant: #e6beb2;
+    --color-outline: #ac897e;
+    --color-outline-variant: #5c4037;
+    --color-primary: #ff5719;
+    --color-on-primary: #ffffff;
+    --color-primary-container: #ff5719;
+    --color-on-primary-container: #ffffff;
+    --color-secondary: #d0bcff;
+    --color-secondary-container: #6000e3;
+    --color-tertiary: #9dcaff;
+    --color-tertiary-container: #3c95e4;
+    --color-background: #111111;
+  }
+
+  body {
+    background-color: var(--color-bg-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  }
+}
+
+/* 1. Heavy Bold Grotesque Display Class (Clash Display, 800 weight, spacious clean tracking) */
+.font-display-bold, .font-display {
+  font-family: 'Clash Display', 'Inter', sans-serif !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  line-height: 1.15 !important;
+  letter-spacing: 0.02em !important;
+  word-spacing: 0.12em !important;
+  color: var(--color-text-primary);
+}
+
+/* 2. Grotesque Sans Class - Functional UI & Body (Inter) */
+.font-sans {
+  font-family: var(--font-sans) !important;
+}
+
+/* 4. Tabular Numerals for Stats, Counters & Stacked Metrics */
+.stat-number, .metric-value, [data-tabular], .tabular-nums {
+  font-variant-numeric: tabular-nums !important;
+  font-feature-settings: "tnum" 1 !important;
+}
+
+/* 5. Small Caps Section Labels */
+.label-caps {
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 11px;
+  opacity: 0.65;
+}
+
+/* Custom Quantum Midnight Utilities */
+.bg-surface-lowest { background-color: var(--color-surface-container-lowest); }
+.bg-surface-low { background-color: var(--color-surface-container-low); }
+.bg-surface-card { background-color: var(--color-surface-container); }
+.bg-surface-high { background-color: var(--color-surface-container-high); }
+
+.border-outline-var { border-color: var(--color-outline-variant); }
+
+.text-primary-ember { color: var(--color-primary); }
+.text-tertiary-blue { color: var(--color-tertiary); }
+.text-on-surface-muted { color: var(--color-on-surface-variant); }
+
+/* Ember Gradient Button */
+.btn-ember-gradient {
+  background: linear-gradient(135deg, #ff5719 0%, #ff8c00 100%);
+  color: #ffffff;
+  font-weight: 700;
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(255, 87, 25, 0.35);
+  transition: all 0.2s ease-in-out;
+}
+.btn-ember-gradient:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 6px 20px rgba(255, 87, 25, 0.5);
+  transform: translateY(-1px);
+}
+
+/* Quantum Glow Card */
+.quantum-glow-card {
+  background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 12px 32px rgba(11, 11, 11, 0.8), var(--shadow-card);
+  position: relative;
+  transition: box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.quantum-glow-card:hover {
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 12px 32px rgba(11, 11, 11, 0.8), var(--shadow-card-hover);
+}
+
+/* Light-mode override: remove dark glow, show clean elevation */
+[data-theme='light'] .quantum-glow-card {
+  background-color: var(--color-bg-secondary);
+  box-shadow: var(--shadow-card);
+}
+
+[data-theme='light'] .quantum-glow-card:hover {
+  box-shadow: var(--shadow-card-hover);
+}
+
+.quantum-glow-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-primary-container), transparent);
+  opacity: 0.4;
+}
+
+/* Leaflet dark map fixes */
+.leaflet-container {
+  background-color: var(--color-bg-primary) !important;
+  font-family: inherit;
+}
+.leaflet-popup-content-wrapper {
+  background: var(--color-bg-tertiary) !important;
+  color: var(--color-text-primary) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 8px !important;
+}
+.leaflet-popup-tip {
+  background: var(--color-bg-tertiary) !important;
+}
+
+/* Map Dark Theme Tile Filter */
+.map-tiles-dark {
+  filter: brightness(0.65) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.75);
+}
